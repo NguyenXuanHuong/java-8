@@ -1,3 +1,3 @@
 public interface SingleParam {
-    int singleParamMethod(int input);
+    int increaseOutsideVariable(int input);
 }
