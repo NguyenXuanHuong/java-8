@@ -1,5 +1,6 @@
 public class Main {
     public static void main(String[] args) {
+        // 実質的にfinalな変数
         int outside = 1;
         SingleParam singleParam = (input) -> {
             //ok
