@@ -1,12 +1,22 @@
 public class Main {
     public static void main(String[] args) {
-        //インターフェースのインスタンスを作成する普通の方法です。
-        //インターフェースを実装するクラスを作成する
-        SampleFunctionalInterface sampleFunctionalInterface = new SampleFunctionalInterfaceImplementation();
-        System.out.println("output from class: " + sampleFunctionalInterface.singleFunction(1));
-        //機能式インターフェースのインスタンスを作成するためにラムダ式を使用する。
-        SampleFunctionalInterface sampleLambdaFunction = (a) -> {return a + 1;};
-        System.out.println("output from lambda: " + sampleLambdaFunction.singleFunction(1));
+        // パラメーターなし
+        NoParameter noParameter = () -> {
+            System.out.println("implementation of the noParamMethod inside the interface");
+        };
+        noParameter.noParamMethod();
+
+        //単一パラメータ
+        SingleParam singleParam = (input) -> {
+            int input1 = input + 1;
+            System.out.println("increased the input");
+            return input1;
+        };
+        System.out.println("singleParam method result: " + singleParam.singleParamMethod(1));
+
+        //複数パラメーター
+        MultipleParams multipleParams = (input1, input2) -> input1 + input2 + 1;
+        System.out.println("multiParam method result: " + multipleParams.multiParamsMethod(1,2));
 
     }
 }
