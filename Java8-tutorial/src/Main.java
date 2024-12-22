@@ -28,12 +28,20 @@ public class Main {
         };
 
         int inputValue = 1;
-
+        /*
+        * increase.accept(inputValue);
+        * multiplyBy2.accept(inputValue);
+        * */
         Consumer<Integer> theNewTwoSequenceConsumer = increase.andThen(multiplyBy2);
         System.out.println();
         System.out.println("------start executing the sequence of two lambda--------");
         theNewTwoSequenceConsumer.accept(inputValue);
 
+        /*
+         * increase.accept(inputValue);
+         * multiplyBy2.accept(inputValue);
+         * multiplyBy3.accept(inputValue);
+         * */
         Consumer<Integer> theNewThreeSequenceConsumer = increase.andThen(multiplyBy2).andThen(multiplyBy3);
         System.out.println();
         System.out.println("------start executing the sequence of two lambda--------");
