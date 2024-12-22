@@ -1,50 +1,33 @@
-import java.util.function.Consumer;
+import java.util.function.BiConsumer;
 
 public class Main {
     public static void main(String[] args) {
-        Consumer<Integer> increase = input ->
-        {
-            System.out.println("original input value is: " + input);
-            input++;
-            System.out.println("increase lambda: accept method was executed");
-            System.out.println("updated input value is: " + input);
+        BiConsumer<Integer, Integer> plusTwoInput = (int1, int2) -> {
+            int sum = int1 + int2;
+            System.out.println("plusTwoInput lambda: accept method was executed");
+            System.out.println("summarized value is: " + sum);
             System.out.println("---------------end---------------");
         };
 
-        Consumer<Integer> multiplyBy2 = input -> {
-            System.out.println("original input value is: " + input);
-            input = input * 2;
-            System.out.println("multiplyBy2 lambda: accept method was executed");
-            System.out.println("updated input value is: " + input);
+        BiConsumer<Integer, Integer> multiplyTwoInput = (int1, int2) -> {
+            int multi = int1 * int2;
+            System.out.println("multiplyTwoInput lambda: accept method was executed");
+            System.out.println("multiple value is: " + multi);
             System.out.println("---------------end---------------");
         };
 
-        Consumer<Integer> multiplyBy3 = input -> {
-            System.out.println("original input value is: " + input);
-            input = input * 3;
-            System.out.println("multiplyBy3 lambda: accept method was executed");
-            System.out.println("updated input value is: " + input);
-            System.out.println("---------------end---------------");
-        };
+        int input1 = 1;
+        int input2 = 2;
 
-        int inputValue = 1;
+        plusTwoInput.accept(input1, input2);
+
         /*
-        * increase.accept(inputValue);
-        * multiplyBy2.accept(inputValue);
+        * plusTwoInput.accept(inputValue);
+        * multiplyTwoInput.accept(inputValue);
         * */
-        Consumer<Integer> theNewTwoSequenceConsumer = increase.andThen(multiplyBy2);
+        BiConsumer<Integer, Integer> theNewTwoSequenceConsumer = plusTwoInput.andThen(multiplyTwoInput);
         System.out.println();
         System.out.println("------start executing the sequence of two lambda--------");
-        theNewTwoSequenceConsumer.accept(inputValue);
-
-        /*
-         * increase.accept(inputValue);
-         * multiplyBy2.accept(inputValue);
-         * multiplyBy3.accept(inputValue);
-         * */
-        Consumer<Integer> theNewThreeSequenceConsumer = increase.andThen(multiplyBy2).andThen(multiplyBy3);
-        System.out.println();
-        System.out.println("------start executing the sequence of three lambda--------");
-        theNewThreeSequenceConsumer.accept(inputValue);
+        theNewTwoSequenceConsumer.accept(input1, input2);
     }
 }
