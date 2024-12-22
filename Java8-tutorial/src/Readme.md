@@ -1,2 +1,7 @@
-# 機能式インターフェース　および　ラムダ式
-- ラムダ式の目的は機能式インターフェースのインスタンスを表します。
+# コンシューマーインタフェース
+JDKはいくつかのよく使用された機能式インターフェースを提供します。
+- <span style="color: red;">コンシューマーインタフェース (consumer interface)</span>
+- 述語インターフェース　(predicate interface)
+- 関数インターフェース　(function interface)
+- サプライヤー インターフェース (Supplier interface)
+
