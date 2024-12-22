@@ -44,7 +44,7 @@ public class Main {
          * */
         Consumer<Integer> theNewThreeSequenceConsumer = increase.andThen(multiplyBy2).andThen(multiplyBy3);
         System.out.println();
-        System.out.println("------start executing the sequence of two lambda--------");
+        System.out.println("------start executing the sequence of three lambda--------");
         theNewThreeSequenceConsumer.accept(inputValue);
     }
 }
