@@ -10,8 +10,6 @@ public class Main {
             System.out.println("updated input value is: " + input);
             System.out.println("---------------end---------------");
         };
-        int inputValue = 1;
-        increase.accept(inputValue);
 
         Consumer<Integer> multiplyBy2 = input -> {
             System.out.println("original input value is: " + input);
@@ -29,10 +27,16 @@ public class Main {
             System.out.println("---------------end---------------");
         };
 
-        // using addThen()
-        Consumer<Integer> theNewSequenceConsumer = increase.andThen(multiplyBy2).andThen(multiplyBy3);
+        int inputValue = 1;
+
+        Consumer<Integer> theNewTwoSequenceConsumer = increase.andThen(multiplyBy2);
         System.out.println();
-        System.out.println("------start executing the sequence of three lambda--------");
-        theNewSequenceConsumer.accept(inputValue);
+        System.out.println("------start executing the sequence of two lambda--------");
+        theNewTwoSequenceConsumer.accept(inputValue);
+
+        Consumer<Integer> theNewThreeSequenceConsumer = increase.andThen(multiplyBy2).andThen(multiplyBy3);
+        System.out.println();
+        System.out.println("------start executing the sequence of two lambda--------");
+        theNewThreeSequenceConsumer.accept(inputValue);
     }
 }
