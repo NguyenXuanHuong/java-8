@@ -1,27 +1,31 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.function.Consumer;
 
 public class Main {
     public static void main(String[] args) {
-        // Consumer to multiply 2 to every integer of a list
-        Consumer<List<Integer>> modify = list ->
+        // Consumer to increase the input
+        Consumer<Integer> increase = input ->
         {
-            for (int i = 0; i < list.size(); i++)
-                list.set(i, 2 * list.get(i));
+            System.out.println("original input value is: " + input);
+            input++;
+            System.out.println("increase lambda: accept method was executed");
+            System.out.println("updated input value is: " + input);
+            System.out.println("---------------end---------------");
         };
+        int inputValue = 1;
+        increase.accept(inputValue);
 
-        // Consumer to display a list of integers
-        Consumer<List<Integer> >
-                dispList = list -> list.stream().forEach(a -> System.out.print(a + " "));
-
-        List<Integer> list = new ArrayList<>();
-        list.add(2);
-        list.add(1);
-        list.add(3);
-
+        // Consumer to multiply the input
+        Consumer<Integer> multiply = input -> {
+            System.out.println("original input value is: " + input);
+            input = input * 2;
+            System.out.println("multiply lambda: accept method was executed");
+            System.out.println("updated input value is: " + input);
+            System.out.println("---------------end---------------");
+        };
         // using addThen()
-        modify.andThen(dispList).accept(list);
-        ;
+        Consumer<Integer> theNewSequenceConsumer = increase.andThen(multiply);
+        System.out.println();
+        System.out.println("------start executing the sequence of two lambda--------");
+        theNewSequenceConsumer.accept(inputValue);
     }
 }
