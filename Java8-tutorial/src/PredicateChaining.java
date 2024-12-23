@@ -2,14 +2,21 @@ import java.util.function.Predicate;
 
 public class PredicateChaining {
     public static void main(String[] args) {
-        Predicate<Integer> greaterThanTen = (i) -> i > 10;
-        Predicate<Integer> lowerThanTwenty = (i) -> i < 20;
-        /*
-        * greaterThanTen.test(15)
-        * lowerThanTwenty.test(15)
-        * */
-        boolean result = greaterThanTen.and(lowerThanTwenty).test(15);
-        System.out.println(result);
+        //インターフェスのインスタンスを作成するための一般的な方法
+        //実装クラスからインスタンスを作成する
+        SampleFunctionalInterface theInstanceCreatedFromClass = new SampleFunctionalInterfaceImpl();
+        passLambdaToMethod(theInstanceCreatedFromClass);
+
+        //ラムダ式を使用して、機能式インターフェスのインスタンスを作成する。
+        SampleFunctionalInterface lambda = () -> {
+            System.out.println();
+            System.out.println("using lambda function to create functional interface function");
+        };
+        passLambdaToMethod(lambda);
+    }
+
+    static void passLambdaToMethod(SampleFunctionalInterface sampleFunctionalInterface){
+        sampleFunctionalInterface.singleAbstractMethod();
     }
 
 }
