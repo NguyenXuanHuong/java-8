@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 
 public class PredicateChaining {
     public static void main(String[] args) {
@@ -12,6 +14,14 @@ public class PredicateChaining {
             System.out.println("using lambda function to create functional interface instance");
         };
         passLambdaToMethod(lambda);
+        /*passLambdaToMethod(
+                () -> {
+            System.out.println();
+            System.out.println("using lambda function to create functional interface instance");
+            }
+        );*/
+//        List<Integer> list = new ArrayList<>();
+//        list.forEach();
     }
 
     static void passLambdaToMethod(SampleFunctionalInterface sampleFunctionalInterface){
