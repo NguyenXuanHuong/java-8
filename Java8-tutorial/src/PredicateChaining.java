@@ -10,7 +10,7 @@ public class PredicateChaining {
         //ラムダ式を使用して、機能式インターフェスのインスタンスを作成する。
         SampleFunctionalInterface lambda = () -> {
             System.out.println();
-            System.out.println("using lambda function to create functional interface function");
+            System.out.println("using lambda function to create functional interface instance");
         };
         passLambdaToMethod(lambda);
     }
