@@ -3,20 +3,20 @@ import java.util.function.Predicate;
 
 public class PredicateAndMethod {
     public static void main(String[] args) {
-        Predicate<String> containsLetterA = p -> p.contains("A");
-        Predicate<String> hasLengthOf3 = p -> p.length() == 3;
+        Predicate<Integer> greaterThan1 = input -> input > 1;
+        Predicate<Integer> greaterThan2 = input -> input > 2;
+        Predicate<Integer> greaterThan3 = input -> input > 3;
 
-        String stringContainAAndLengthIs3 = "Abc";
-
+        int trueInput = 4;
+        int falseInput = 2;
         /*
-        containsLetterA.test(containsLetterA) && hasLengthOf3.test(containsLetterA)
+        greaterThan1.test(input) && greaterThan2.test(containsLetterA) && greaterThan3.test(input)
         * */
-        Predicate<String> stringContainAAndLengthIs3Predicate = containsLetterA.and(hasLengthOf3);
-        boolean trueValue = stringContainAAndLengthIs3Predicate.test(stringContainAAndLengthIs3);
+        Predicate<Integer> sequencePredicate = greaterThan1.and(greaterThan2).and(greaterThan3);
+        boolean trueValue = sequencePredicate.test(trueInput);
         System.out.println(trueValue);
 
-        String lengthGreaterThan3 = "Abcd";
-        boolean falseValue = stringContainAAndLengthIs3Predicate.test(lengthGreaterThan3);
+        boolean falseValue = sequencePredicate.test(falseInput);
         System.out.println(falseValue);
     }
 }
