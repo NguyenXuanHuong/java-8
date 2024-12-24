@@ -5,6 +5,6 @@ public class PredicateNotMethod {
         Predicate<Integer> isEqual3 = input -> input == 3;
 //         Predicate<Integer> notEqual3 = isEqual3.negate();
         Predicate<Integer> notEqual3 = Predicate.not(isEqual3);
-        System.out.println(notEqual3.test(3));
+        System.out.println(notEqual3.test(4));
     }
 }
