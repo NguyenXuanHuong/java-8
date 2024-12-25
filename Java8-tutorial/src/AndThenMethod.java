@@ -2,16 +2,18 @@ import java.util.function.Function;
 
 public class AndThenMethod {
     public static void main(String[] args) {
-        Function<Integer, String> turnIntegerToString = intInput -> {
-            System.out.println("turn Integer to String");
-            return String.valueOf(intInput);
+        Function<Integer, Integer> plus1 = input -> {
+            return input + 1;
         };
-        Function<String, Integer> turnStringToInteger = stringInput -> {
-            System.out.println("turn String back to Integer");
-            return Integer.valueOf(stringInput);
+        Function<Integer, Integer> multiple2 = input -> {
+            return input * 2;
         };
-        Function<Integer, Integer> sequenceFunction = turnIntegerToString.andThen(turnStringToInteger);
-        System.out.println(sequenceFunction.apply(10));
+        int plus1Result = plus1.apply(4);
+        int plus2Result = multiple2.apply(plus1Result);
+        System.out.println(plus2Result);
+
+        Function<Integer, Integer> sequenceFunction = plus1.andThen(multiple2);
+        System.out.println(sequenceFunction.apply(4));
     }
 
 }
