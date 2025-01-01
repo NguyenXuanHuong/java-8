@@ -1,6 +1,9 @@
+package intermediateFunction;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Distinct {
     public static void main(String[] args) {
@@ -10,7 +13,8 @@ public class Distinct {
         listInteger.add(2);
         listInteger.add(3);
         listInteger.add(3);
-        List<Integer> distinctValues = listInteger.stream().distinct().collect(Collectors.toList());
-        distinctValues.forEach(System.out::println);
+        Stream<Integer> distinctValuesStream = listInteger.stream().distinct();
+        List<Integer> distinctValuesList = distinctValuesStream.collect(Collectors.toList());
+        distinctValuesList.forEach(System.out::println);
     }
 }

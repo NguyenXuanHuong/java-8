@@ -1,8 +1,10 @@
+package terminalFunction;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-public class StreamForEach {
+public class ForEach {
     public static void main(String[] args) {
         List<Integer> listInteger = new ArrayList<>();
         listInteger.add(1);

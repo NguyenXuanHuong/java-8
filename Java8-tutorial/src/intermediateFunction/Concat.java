@@ -1,3 +1,5 @@
+package intermediateFunction;
+
 import java.util.stream.Stream;
 
 public class Concat {
