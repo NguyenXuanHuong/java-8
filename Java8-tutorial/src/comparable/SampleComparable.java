@@ -33,8 +33,14 @@ public class SampleComparable implements Comparable<SampleComparable>{
         this.objectValue = objectValue;
     }
 
+    //sort in ascend order
+//    @Override
+//    public int compareTo(SampleComparable o) {
+//        return this.objectValue - o.getObjectValue();
+//    }
+    //sort in descend order
     @Override
     public int compareTo(SampleComparable o) {
-        return this.objectValue - o.getObjectValue();
+        return o.getObjectValue() - this.objectValue;
     }
 }
