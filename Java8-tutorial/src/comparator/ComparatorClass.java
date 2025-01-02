@@ -6,8 +6,11 @@ import java.util.List;
 
 public class ComparatorClass {
     public static void main(String[] args) {
-
+// descend order
         Comparator<SampleClass> comparator = (obj1, obj2) -> obj2.getObjectValue1() - obj1.getObjectValue1();
+        // ascend order
+//        Comparator<SampleClass> comparator = (obj1, obj2) -> obj1.getObjectValue1() - obj2.getObjectValue1();
+
         SampleClass obj1 = new SampleClass("obj1", 1);
         SampleClass obj2 = new SampleClass("obj2", 2);
         SampleClass obj3 = new SampleClass("obj3", 3);
