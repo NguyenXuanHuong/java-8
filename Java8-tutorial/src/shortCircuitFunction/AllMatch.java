@@ -10,7 +10,7 @@ public class AllMatch {
         listInteger.add(1);
         listInteger.add(2);
         listInteger.add(3);
-        Predicate<Integer> searchCondition = input -> input > 1;
+        Predicate<Integer> searchCondition = input -> input > 2;
         boolean listHaveAllElementGreaterThan2 = listInteger.stream().allMatch(searchCondition);
         System.out.println(listHaveAllElementGreaterThan2);
     }

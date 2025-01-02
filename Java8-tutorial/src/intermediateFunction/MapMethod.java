@@ -13,5 +13,6 @@ public class MapMethod {
         };
         Stream<String> stringStream = listInteger.stream().map(mapFunction);
         List<String> listString = stringStream.collect(Collectors.toList());
+        System.out.println(listString);
     }
 }
