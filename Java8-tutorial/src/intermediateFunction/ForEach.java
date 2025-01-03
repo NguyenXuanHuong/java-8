@@ -1,4 +1,4 @@
-package terminalFunction;
+package intermediateFunction;
 
 import java.util.ArrayList;
 import java.util.List;
