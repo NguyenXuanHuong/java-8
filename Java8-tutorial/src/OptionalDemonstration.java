@@ -10,9 +10,9 @@ public class OptionalDemonstration {
 
 
         // the first method - should not use because of NullPointerException.
-        String classLevel3StringProperty = "Empty";
-        classLevel3StringProperty = classLevel1.getClassLevel2().getClassLevel3().getLevel3Property();
-        System.out.println(classLevel3StringProperty);
+//        String classLevel3StringProperty = "Empty";
+//        classLevel3StringProperty = classLevel1.getClassLevel2().getClassLevel3().getLevel3Property();
+//        System.out.println(classLevel3StringProperty);
 
         //the second method - using if to check null - complex
 //        String classLevel3StringProperty = "Empty";
@@ -28,8 +28,8 @@ public class OptionalDemonstration {
 //        System.out.println(classLevel3StringProperty);
 
         //the third method - using Optional
-//        String string = Optional.ofNullable(classLevel1.getClassLevel2()).map(ClassLevel2::getClassLevel3)
-//                        .map(ClassLevel3::getLevel3Property).orElse("Empty");
-//        System.out.println(string);
+        String string = Optional.ofNullable(classLevel1.getClassLevel2()).map(ClassLevel2::getClassLevel3)
+                        .map(ClassLevel3::getLevel3Property).orElse("Empty");
+        System.out.println(string);
     }
 }
