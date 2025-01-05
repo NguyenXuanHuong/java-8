@@ -18,8 +18,8 @@ public class OptionalOfOfNullableEmpty {
 //        Optional<SampleClass> sampleClassOf = Optional.of(sampleClassNull);
 //        String name2 = sampleClassOfNullable.map(SampleClass::getName).orElse("Of");
 
-        Optional<Integer> empty = Optional.empty();
-        System.out.println(empty.get());
+//        Optional<Integer> empty = Optional.empty();
+//        System.out.println(empty.get());
 
         System.out.println(name);
         System.out.println(name2);
