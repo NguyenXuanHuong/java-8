@@ -10,7 +10,7 @@ public class LocalTimeMethod {
         LocalTime localTime1 = LocalTime.of(23,33);
         System.out.println(localTime1);
 
-        LocalTime localTime2 = LocalTime.of(22,33,45);
+        LocalTime localTime2 = LocalTime.of(22,33,45, 98);
         System.out.println(localTime2);
 
         /**
@@ -27,8 +27,8 @@ public class LocalTimeMethod {
         System.out.println("modify hours : " + localTime.minusHours(2));
         System.out.println("modify hours using chronoUnit: " + localTime.minus(2, ChronoUnit.HOURS));
         System.out.println("modify using with : " + localTime.with(LocalTime.MIDNIGHT));
+        System.out.println("modify withHour : " + localTime.withHour(2));
         System.out.println("modify using with chrono field: " + localTime.with(ChronoField.HOUR_OF_DAY,22));
         System.out.println("modify hours : " + localTime.plus(2, ChronoUnit.MINUTES));
-        System.out.println("modify withHour : " + localTime.withHour(2));
     }
 }
