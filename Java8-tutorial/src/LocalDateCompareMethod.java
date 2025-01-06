@@ -5,11 +5,11 @@ public class LocalDateCompareMethod {
         LocalDate localDate = LocalDate.now();
 
         LocalDate localDate1 = LocalDate.of(2025, 1, 6);
-        System.out.println("isEqual : " + localDate1.isEqual(localDate1));
+        System.out.println("isEqual : " + localDate1.isEqual(localDate));
 
         LocalDate localDate2 = LocalDate.of(2025, 1, 7);
-        System.out.println("isBefore : " + localDate1.isBefore(localDate));
-        System.out.println("isAfter : " + localDate1.isAfter(localDate2));
+        System.out.println("isBefore : " + localDate2.isBefore(localDate));
+        System.out.println("isAfter : " + localDate2.isAfter(localDate));
 
     }
 }
