@@ -27,20 +27,5 @@ public class LocalDateTimeMethod {
         System.out.println("with : " + localDateTime.with(ChronoField.MONTH_OF_YEAR,3));
         System.out.println("firstDayOfNextMonth : " + localDateTime.with(TemporalAdjusters.firstDayOfNextMonth()));
 
-
-
-        /**
-         * Converting LocalDate,LocalTime to LocalDateTime and vice versa
-         */
-
-        LocalDate localDate = LocalDate.now();
-        System.out.println("atTime : "+ localDate.atTime(23,30));
-
-        LocalTime localTime = LocalTime.now();
-        System.out.println("atTime : "+ localTime.atDate(localDate));
-        System.out.println("atStartOfDay : " + localDate.atStartOfDay());
-
-        System.out.println("toLocalDate : " + localDateTime.toLocalDate());;
-        System.out.println("toLocalTime : " + localDateTime.toLocalTime());;
     }
 }
